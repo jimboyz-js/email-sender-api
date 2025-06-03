@@ -1,0 +1,25 @@
+{
+  "name": "mail-sender-api",
+  "version": "1.0.0",
+  "description": "A backend RESTful API built with Node.js and Express.js that allows sending emails using Nodemailer. Supports file attachments using Multer and provides secure, configurable endpoints for email delivery. Ideal for contact forms, automated notifications, or bulk email sending features.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "send-mail-api"
+  ],
+  "author": "jimBoYz Ni ChOy",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.0",
+    "nodemailer": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
