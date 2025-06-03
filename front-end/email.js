@@ -24,7 +24,7 @@ class SMTP {
 
         try {
             
-            const res = await fetch('http://localhost:3000/send-email', {
+            const res = await fetch('http://email-sender-8cp9u4q3e-jimboyz-js-projects.vercel.app/send-email', {
                 method:'POST',
                 headers,
                 body,
