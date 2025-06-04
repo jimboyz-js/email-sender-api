@@ -39,7 +39,6 @@ let upload = multer({
 
 const user_mail = process.env.EMAIL_USER;
 const email_pass = process.env.EMAIL_PASS;
-const to = process.env.RECIPIENTS_EMAIL;
 const host = process.env.SMTP_HOST;
 const port = process.env.SMTP_PORT;
 const secure = process.env.SECURE;
@@ -66,7 +65,7 @@ app.post('/send-email', upload.single('attachment'), async (req, res) => {
 
         const mailOptions = {
             from: name,
-            to: recipient || to,
+            to: recipient,
             subject: emailSubject,
             text: `From: ${name} \n${message}`,
             attachments: file ? [{ path: file.path, filename: file.originalname }] : [],
