@@ -49,7 +49,6 @@ Add this to your HTML to use the email utility:
 function sendEmail() {
     const formData = new FormData();
     formData.append('name', `${document.getElementById('name').value} <${document.getElementById('email').value}>`);
-    formData.append('email', document.getElementById('email').value);
     formData.append('subject', document.getElementById('subject').value);
     formData.append('message', document.getElementById('message').value);
     formData.append('recipient', 'mail@gmail.com'); //Replace with your email
