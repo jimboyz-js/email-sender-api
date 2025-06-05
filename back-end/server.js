@@ -39,10 +39,10 @@ let upload = multer({
 
 const user_mail = process.env.EMAIL_USER;
 const email_pass = process.env.EMAIL_PASS;
-const host = process.env.SMTP_HOST;
-const port = process.env.SMTP_PORT;
-const secure = process.env.SECURE;
-const service = process.env.SERVICE;
+const host = process.env.SMTP_HOST || 'smtp.gmail.com';
+const port = process.env.SMTP_PORT || '465';
+const secure = process.env.SECURE || 'true';
+const service = process.env.SERVICE || 'gmail';
 
 app.post('/send-email', upload.single('attachment'), async (req, res) => {
     try {
