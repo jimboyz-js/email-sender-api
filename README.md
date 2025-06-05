@@ -75,7 +75,7 @@ You can also run `index.html` from the `sample-front-end` directory.
 * The data is sent via fetch() to your Node.js API at:
 
 ```bash
-POST https://jimboyz-email-sender-api.vercel.app/api/send-emai
+POST https://jimboyz-email-sender-api.vercel.app/api/send-email
 ```
 * On the backend, the email is processed and sent using Nodemailer.  
 
