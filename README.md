@@ -48,11 +48,11 @@ Add this to your HTML to use the email utility:
 ```JavaScript
 function sendEmail() {
     const formData = new FormData();
-    formData.append('name', document.getElementById('name').value);
+    formData.append('name', `${document.getElementById('name').value} <${document.getElementById('email').value}>`);
     formData.append('email', document.getElementById('email').value);
     formData.append('subject', document.getElementById('subject').value);
     formData.append('message', document.getElementById('message').value);
-    formData.append('recipient', 'mail@gmail.com');
+    formData.append('recipient', 'mail@gmail.com'); //Replace with your email
     formData.append('attachment', document.getElementById('attachment').files[0]);
 
     SMTP.send(formData)
@@ -133,6 +133,30 @@ By default, the server listens on:
 
 Ensure to update your SMTP credentials in `server.js.`
 
+### 📧 SMTP Configuration (`.env`)  *'Create the .env file in the back-end's root directory'*.
+Ensure to update your SMTP credentials in your `.env` file  before running the server. This is used by `nodemailer` to send emails.
+
+```ini
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your_app_specific_password
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SECURE=true
+SERVICE=gmail
+```
+> ⚠️ These values correspond to Gmail SMTP settings. If you're using a different provider, adjust accordingly (e.g., smtp.office365.com, smtp.mail.yahoo.com, etc.).
+
+The `server.js` file is set up to use either your provided environment variables or fall back to the following defaults:
+
+```JS
+host: host || 'smtp.gmail.com',
+port: port || '465',
+secure: secure || 'true',
+service: service || 'gmail'
+```
+This means if you do not provide `.env` values, it will attempt to use Gmail’s SMTP settings by default.
+
+✅ Make sure to add the `.env` file in the `back-end/` directory (same level as `server.js`).
 
 # 🧪 Testing Front-End Locally
 If you'd like to test the front-end or the email.js script locally, you can serve it using Python’s built-in HTTP server.
