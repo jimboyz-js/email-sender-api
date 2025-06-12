@@ -108,7 +108,6 @@ pre {
     align-items: center;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #fff;
 }
 
 .fa-icon-copy {
@@ -116,12 +115,16 @@ pre {
 }
 
 .btn-copy:hover {
-    /* background-color: rgba(6, 1, 1, 0.662); */
+    background-color: rgba(6, 1, 1, 0.662);
 }
 
 .fa-check{
     color: rgb(18, 210, 18);
-    display: none;
+    /* display: none; */
+}
+
+.fa-copy {
+    color: gray;
 }
 
 .showCheckIcon {

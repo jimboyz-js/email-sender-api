@@ -19,7 +19,7 @@ document.querySelectorAll('.btn-copy').forEach(button => {
             // target.setAttribute('title', 'Copied!');
             // target.title = 'Hello';
 
-            const icon = button.querySelector('i');
+            const icon = button.querySelector('.btn-copy i');
 
             if (!target || !icon) return;
 
@@ -27,7 +27,6 @@ document.querySelectorAll('.btn-copy').forEach(button => {
             .then(()=> {
                 // checkBtn.classList.add('showCheckIcon');
                 // copyBtn.classList.add('hideCopyIcon');
-                
                 
 
                 document.querySelectorAll('.btn-copy i').forEach(i => {
@@ -48,7 +47,7 @@ document.querySelectorAll('.btn-copy').forEach(button => {
                     // target.title = 'Copy';
 
                     icon.className = 'fas fa-copy fa-lg';
-                }, 5000);
+                }, 3000);
             
             })
             .catch(err => {
