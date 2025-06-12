@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="home">
+        <div class="container">
+            <h1 class="project-name">jimboyz-email-sender</h1>
+            <h2 class="project-description">A lightweight and ready-to-use JavaScript-based email sending utility built with Node.js, Express, Multer, and Nodemailer</h2>
+            <div class="btn-container">
+                <a href="#" class="cdn-download"><i class="fa-solid fa-file fa-lg"></i>CDN</a></a>
+                <a href="https://github.com/jimboyz-js/email-sender-api" target="_blank" rel="norefferer noopener"><i class="fa-brands fa-github fa-lg"></i>GitHub</a>
+            </div>
+        </div>
+        <div class="arrow-down">
+            <a href="#project"><img src="./assets/images/arrow-down-circular.png" width="40" height="40" alt=""></a>
+        </div>
+    </section>
+
+    <section id="project" class="project">
+
+        <div class="usage">
+            <h1><i class="fa-solid fa-gear fa-lg"></i> Usage</h1>
+            <ol>
+                <li>
+                    <h3>Include the script</h3>
+                    <h4 class="desc">Add this to your HTML to use the email utility:</h4>
+                    <div class="code-view">
+                        <div class="btn-copy" data-copy-target="code-1" title="Copy">
+                            <i class="fa-icon-copy fas fa-copy fa-lg"></i>
+                            <i class="fa-icon-check fas fa-check fa-lg"></i>
+                        </div>
+                        <pre class="preview-code">
+                            <code id="code-1" class="language-html">
+                                &lt;script src="https://jimboyz-send-mail.vercel.app/v1/email.js"&gt;&lt;/script&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <h3>HTML Form Example</h3>
+                    <div class="code-view">
+                        <div class="btn-copy" data-copy-target="code-2" title="Copy code">
+                            <i class="fa-icon-copy fas fa-copy fa-lg"></i>
+                            <i class="fa-icon-check fas fa-check fa-lg"></i>
+                        </div>
+                        <pre class="preview-code">
+                            <code id="code-2" class="language-html">
+                                &lt;form onsubmit="sendEmail(); return false;">
+                                    &lt;input type="text" id="name" placeholder="Your Name" required>
+                                    &lt;input type="email" id="email" placeholder="Your Email" required>
+                                    &lt;input type="text" id="subject" placeholder="Subject" required>
+                                    &lt;textarea id="message" placeholder="Your Message" required></textarea>
+                                    &lt;input type="file" id="attachment">
+                                    &lt;button type="submit">Send Email</button>
+                                &lt;/form&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <h3>Send Email via JavaScript</h3>
+                    <div class="code-view">
+                        <div class="btn-copy" data-copy-target="code-3" title="Copy code">
+                            <i class="fa-icon-copy fas fa-copy fa-lg"></i>
+                            <i class="fa-icon-check fas fa-check fa-lg"></i>
+                        </div>
+                        <pre class="preview-code">
+                            <code id="code-3" class="language-javascript">
+                                function sendEmail() {
+                                    const formData = new FormData();
+                                    formData.append('name', `${document.getElementById('name').value} <${document.getElementById('email').value}>`);
+                                    formData.append('subject', document.getElementById('subject').value);
+                                    formData.append('message', document.getElementById('message').value);
+                                    formData.append('recipient', 'mail@gmail.com'); //Replace with your email
+                                    formData.append('attachment', document.getElementById('attachment').files[0]);
+                                
+                                    SMTP.send(formData)
+                                    .then(response => {
+                                        alert(response.message);
+                                        clearInputFields(); // your custom function
+                                    })
+                                    .catch(error => {
+                                        alert('Send failed. Please check the console.');
+                                        console.error(error);
+                                    });
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- <div class="code-view">
+            <div class="btn-copy" title="Copy code">
+                <i class="fa-icon-copy fas fa-copy fa-lg"></i>
+                <i class="fa-icon-check fas fa-check fa-lg"></i>
+            </div>
+            <pre class="preview-code">
+                <code id="code-2" class="language-javascript">
+                    
+                </code>
+            </pre>
+        </div> -->
+    </section>
+
+    <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Syntax highlighter -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="./assets/script/script.js"></script>
+</body>
+</html>
