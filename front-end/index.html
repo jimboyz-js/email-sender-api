@@ -11,10 +11,10 @@
 <body>
     <section id="home">
         <div class="container">
-            <h1 class="project-name">jimboyz-email-sender</h1>
+            <h1 class="project-name">Email Sender API</h1>
             <h2 class="project-description">A lightweight and ready-to-use JavaScript-based email sending utility built with Node.js, Express, Multer, and Nodemailer</h2>
             <div class="btn-container">
-                <a href="#" class="cdn-download"><i class="fa-solid fa-file fa-lg"></i>CDN</a></a>
+                <button type="button" class="cdn-download"><i class="fa-solid fa-file fa-lg"></i>CDN</button>
                 <a href="https://github.com/jimboyz-js/email-sender-api" target="_blank" rel="norefferer noopener"><i class="fa-brands fa-github fa-lg"></i>GitHub</a>
             </div>
         </div>
@@ -34,8 +34,6 @@
                     <div class="code-view">
                         <div class="btn-copy" data-copy-target="code-1" title="Copy">
                             <i class="fas fa-copy fa-lg" ></i>
-                            <!-- <i class="fa-icon-copy fas fa-copy fa-lg" ></i> -->
-                            <!-- <i class="fa-icon-check fas fa-check fa-lg"></i> -->
                         </div>
                         <pre class="preview-code">
                             <code id="code-1" class="language-html">
@@ -48,9 +46,7 @@
                     <h3>HTML Form Example</h3>
                     <div class="code-view">
                         <div class="btn-copy" data-copy-target="code-2" title="Copy">
-                            <!-- <i class="fa-icon-copy"></i> -->
                             <i class="fas fa-copy fa-lg" ></i>
-                            <!-- <i class="fa-icon-check fas fa-check fa-lg"></i> -->
                         </div>
                         <pre class="preview-code">
                             <code id="code-2" class="language-html">
@@ -60,7 +56,7 @@
                                     &lt;input type="text" id="subject" placeholder="Subject" required>
                                     &lt;textarea id="message" placeholder="Your Message" required></textarea>
                                     &lt;input type="file" id="attachment">
-                                    &lt;button type="submit">Send Email</button>
+                                    &lt;button type="submit">Send Email&lt;/button&gt;
                                 &lt;/form&gt;
                             </code>
                         </pre>
@@ -68,11 +64,10 @@
                 </li>
                 <li>
                     <h3>Send Email via JavaScript</h3>
+                    <h4 class="desc">Using FormData</h4>
                     <div class="code-view">
                         <div class="btn-copy" data-copy-target="code-3" title="Copy code">
-                            <!-- <i class="fa-icon-copy"></i> -->
                             <i class="fas fa-copy fa-lg" ></i>
-                            <!-- <i class="fa-icon-check fas fa-check fa-lg"></i> -->
                         </div>
                         <pre class="preview-code">
                             <code id="code-3" class="language-javascript">
@@ -97,11 +92,55 @@
                             </code>
                         </pre>
                     </div>
+
+                    <h4 class="desc">Using JSON Data as arguments </h4>
+                    <div class="code-view">
+                        <div class="btn-copy" data-copy-target="code-4" title="Copy code">
+                            <i class="fas fa-copy fa-lg" ></i>
+                        </div>
+                        <pre class="preview-code">
+                            <code id="code-4" class="language-javascript">
+                                function sendEmail() {
+                                    SMTP.send({
+                                        name: document.getElementById('name').value,
+                                        recipient: 'mail@gmail.com',
+                                        subject: document.getElementById('subject').value,
+                                        message: `Email: <${document.getElementById('email').value}>\n${document.getElementById('message').value}`,
+                                    })
+                                    .then(response => {
+                                        alert(response.message);
+                                        clearInputFields(); // To clear all the input fields.
+                                    })
+                                    .catch(error => {
+                                        console.error(error);
+                                    })
+                                }
+                            </code>
+                        </pre>
+                    </div>
                 </li>
             </ol>
+            <div class="note-container">
+                <blockquote>
+                    <h3>⚠️ Note: </h3>
+                    <p>This project is intended for <strong>learning</strong> and <strong>development</strong> purposes only.</p>
+                    <p>Please be aware that using this tool in a <strong>public-facing website</strong> is <strong>not secure</strong>, especially if you hardcode your email credentials or recipients directly in the frontend.</p>
+                    <p>Since the frontend JavaScript is accessible to users through <strong>browser developer tools</strong> (e.g., <em data-start="516" data-end="533">Inspect Element</em> or <em>View Page Source</em>), <strong>your email address and other sensitive data can be exposed</strong>.</p>
+                    <p>For production environments, always keep sensitive logic and credentials on the server side, and use authentication or secure API gateways to protect your email-sending functionality.</p>
+                </blockquote>
+            </div>
         </div>
-
+        
     </section>
+
+    <footer>
+        <ul>
+            <li><a href="https://github.com/jimboyz-js/email-sender-api">GitHub Repo</a></li>
+            <li><a href="#">README</a></li>
+        </ul>
+        <ul>
+        <p>&copy; 2025 Jimboyz-js. All rights reserved.</p>
+    </footer>
 
     <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

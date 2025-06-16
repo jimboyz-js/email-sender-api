@@ -43,7 +43,7 @@ section {
     margin-top: 10px;
 }
 
-.container .btn-container a {
+.container .btn-container a, .cdn-download {
     /* background-color: rgba(255, 77, 121, .25); */
     background-color: #7738c8;
     text-decoration: none;
@@ -53,8 +53,12 @@ section {
     transition: background 0.3s;
 }
 
-.container .btn-container a i {
+.container .btn-container a i, button i {
     margin-right: 5px;
+}
+
+.container .btn-container button {
+    cursor: pointer;
 }
 
 .arrow-down {
@@ -69,6 +73,7 @@ section {
 
 .project {
     background-color: #eee;
+    padding-bottom: 2rem;
 }
 
 .usage h1 {
@@ -110,33 +115,63 @@ pre {
     cursor: pointer;
 }
 
-.fa-icon-copy {
-    color: gray;
-}
-
 .btn-copy:hover {
     background-color: rgba(6, 1, 1, 0.662);
 }
 
 .fa-check{
     color: rgb(18, 210, 18);
-    /* display: none; */
 }
 
 .fa-copy {
     color: gray;
 }
 
-.showCheckIcon {
-    display: block;
+.note-container {
+    font-size: medium;
 }
 
-.showCopyIcon {
-    display: block;
+div:has(> blockquote) {
+    background-color: #c2d4d8;
+    padding-bottom: 15px;
+    border-radius: 5px;
+  }
+  
+  blockquote p::before {
+    content: "\201C";
+  }
+  
+  blockquote p::after {
+    content: "\201D";
+  }
+  
+  blockquote + p {
+    text-align: center;
+  }
+
+footer {
+    background-color: #edeff1;
+    font-weight: 100;
+    font-size: .70em;
 }
 
-.hideCopyIcon{
-    display: none;
+footer ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    gap: 20px;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+footer ul li, a {
+    padding: 0;
+    color: rgb(26, 25, 25);
+}
+
+footer p {
+    padding: .80rem 0 .50rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -153,4 +188,7 @@ pre {
         right: .5rem;
     }
     
+    li {
+        padding-bottom: 10px;
+    }
 }
