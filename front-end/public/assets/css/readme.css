@@ -18,6 +18,6 @@ code {
 
 @media only screen and (max-width: 768px) {
     body {
-        margin: 40px 1rem;
+        margin: 40px 10px;
     }
 }
