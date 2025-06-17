@@ -8,7 +8,7 @@
 });
 
 Prism.highlightAll(); // Ensure Prism runs on dynamically added HTML
-fetch('../README.md').then(r => r.text()).then(mdText => {
+fetch('../../README.md').then(r => r.text()).then(mdText => {
     document.getElementById('content').innerHTML = marked.parse(mdText);
     Prism.highlightAll();
 });
