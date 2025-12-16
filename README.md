@@ -1,6 +1,6 @@
 # 📧 Email Sender API
 
-A lightweight and ready-to-use JavaScript-based email sending utility built with **Node.js**, **Express**, **Multer**, and **Nodemailer** — similar in concept to `smtp.js` from Elastic Email.
+A lightweight, self-hosted Email Sender API built with **Node.js**, **Express**, **Multer**, and **Nodemailer** — ideal for backend email delivery via SMTP providers.
 
 This project is divided into two parts:
 
@@ -218,7 +218,7 @@ http://localhost:8000/sample-front-end/index.html
 
 # 💡 Inspiration
 
-This project is inspired by [`smtp.js`](https://smtpjs.com) but gives you full control over the back-end and email sending logic.
+Inspired by simple JavaScript email utilities like [`smtp.js`](https://smtpjs.com), this project implements similar functionality as a secure backend API rather than a frontend-only script.
 
 # 📄 License
 
