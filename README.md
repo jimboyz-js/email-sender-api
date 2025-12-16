@@ -203,7 +203,7 @@ py -m http.server --bind 192.168.1.1 8000
 3. Use local script in your HTML:  
    Update your `<script>` tag in `index.html` like this:
 
-```JavaScript
+```html
 <script src="http://localhost:8000/v1/email.js"></script>
 ```
 
